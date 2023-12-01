@@ -7,10 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Amazon {
+public class CalendarHandling {
 
 	public static void main(String[] args) throws InterruptedException {
-
+		// TODO Auto-generated method stub
 		Date date = new Date();
 
 		String currentDate = date.toString();
@@ -38,5 +38,6 @@ public class Amazon {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@aria-label='"+today+"']")).click();
 	}
+	
 
 }
