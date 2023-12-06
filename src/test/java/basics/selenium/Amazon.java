@@ -64,7 +64,7 @@ public class Amazon {
 		
 		driver.switchTo().defaultContent();
 		
-		driver.findElement(By.xpath("//span[@class='commonModal__clos']")).click();
+		driver.findElement(By.xpath("//span[@class='commonModal__close']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[text()='Departure']")).click();
 		Thread.sleep(1000);
