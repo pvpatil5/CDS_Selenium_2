@@ -1,5 +1,6 @@
 package com.Vtiger.Tests;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -8,9 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class CreateOrganizationTest {
+import genericMethods.PropertyFileHandling;
+import genericMethods.SeleniumGenericMedhods;
 
-	public static void main(String[] args) throws InterruptedException {
+public class CreateOrganizationTest extends SeleniumGenericMedhods {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
 		//Login App
 		//Validate Home Page
 		//Click on Org menu
@@ -21,17 +25,11 @@ public class CreateOrganizationTest {
 		//logout
 
 
-
-		//Launch Browser 
-		WebDriver driver = new ChromeDriver();
-		driver.get("http://localhost:8888");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
+		String browser=PropertyFileHandling.readDataPropFile("browser");
+		String url=PropertyFileHandling.readDataPropFile("url");;
+		WebDriver driver = SeleniumGenericMedhods.launchBrowser(browser,url);
 		//Login code
-		driver.findElement(By.name("user_name")).sendKeys("admin");
-		driver.findElement(By.name("user_password")).sendKeys("12345");
-		driver.findElement(By.id("submitButton")).click();
+		loginToApplication();
 
 		//Login Validate
 		String pagetitle=driver.findElement(By.xpath("//a[@href='index.php?action=index&module=Home']")).getText();
@@ -83,11 +81,11 @@ public class CreateOrganizationTest {
 		driver.findElement(By.name("submit")).click();
 
 		Thread.sleep(3000);
-		
+
 		String actualOrgName=driver.findElement(By.xpath("(//a[@title='Organizations'])[1]")).getText();
-		
+
 		System.out.println("-->"+actualOrgName);
-		
+
 		if(actualOrgName.contains(orgName)) {
 			System.out.println("Test Pass");
 		}
@@ -96,7 +94,7 @@ public class CreateOrganizationTest {
 			System.out.println("Test Fail");
 		}
 
-
+		//Logout & close browser
 
 	}
 
