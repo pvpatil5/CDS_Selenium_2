@@ -7,8 +7,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import basics.selenium.MouseHover;
+import genericMethods.CreateRandomNumber;
 import genericMethods.PropertyFileHandling;
 import genericMethods.SeleniumGenericMedhods;
 
@@ -29,7 +32,7 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 		String url=PropertyFileHandling.readDataPropFile("url");;
 		WebDriver driver = SeleniumGenericMedhods.launchBrowser(browser,url);
 		//Login code
-		loginToApplication();
+		
 
 		//Login Validate
 		String pagetitle=driver.findElement(By.xpath("//a[@href='index.php?action=index&module=Home']")).getText();
@@ -58,11 +61,17 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 		driver.findElement(By.xpath("//img[@alt='Create Organization...']")).click();
 
 		//enter org name
+		String number=CreateRandomNumber.randomnumber();
+		String orgname="TATA TECH_";
+		String orgName=orgname+number;
+		
+		
+		//driver.findElement(By.name("accountname")).sendKeys(orgName);
+		
+		enterData(By.name("accountname"), orgName);
 
-		String orgName="TATA TECH_3";
-		driver.findElement(By.name("accountname")).sendKeys(orgName);
-
-		driver.findElement(By.xpath("//input[@accesskey='S']")).click();
+	//	driver.findElement(By.xpath("//input[@accesskey='S']")).click();
+		clickEleemnt(By.xpath("//input[@accesskey='S']"));
 
 		Thread.sleep(3000);
 		//driver.findElement(By.xpath("//img[@src='themes/softed/images/Home.PNG']")).click();
@@ -75,8 +84,7 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 
 		WebElement ddelement = driver.findElement(By.id("bas_searchfield"));
 
-		Select select = new Select(ddelement);
-		select.selectByValue("accountname");
+		selectVisibleText(ddelement, "accountname");
 
 		driver.findElement(By.name("submit")).click();
 
@@ -95,7 +103,13 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 		}
 
 		//Logout & close browser
-
+		WebElement ele = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
+		mouseHover(ele);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[@href='index.php?module=Users&action=Logout']")).click();
+		
+		
+		
 	}
 
 }

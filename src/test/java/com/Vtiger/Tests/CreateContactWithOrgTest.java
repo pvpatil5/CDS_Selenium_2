@@ -14,7 +14,7 @@ public class CreateContactWithOrgTest extends SeleniumGenericMedhods{
 		String url=PropertyFileHandling.readDataPropFile("url");;
 		WebDriver driver = SeleniumGenericMedhods.launchBrowser(browser,url);
 		//Login code
-		loginToApplication();
+	
 
 	}
 
