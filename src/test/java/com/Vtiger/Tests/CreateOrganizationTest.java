@@ -84,7 +84,7 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 
 		WebElement ddelement = driver.findElement(By.id("bas_searchfield"));
 
-		selectVisibleText(ddelement, "accountname");
+		//selectVisibleText(ddelement, "accountname");
 
 		driver.findElement(By.name("submit")).click();
 

@@ -17,5 +17,4 @@ public class CreateContactWithOrgTest extends SeleniumGenericMedhods{
 	
 
 	}
-
 }
