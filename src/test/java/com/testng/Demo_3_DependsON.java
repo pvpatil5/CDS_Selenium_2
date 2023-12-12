@@ -13,13 +13,13 @@ public class Demo_3_DependsON {
 	}
 
 	
-	@Test(dependsOnMethods = "createCustomerSBI",priority = 1)
+	@Test(dependsOnMethods = "createCustomerSBI",alwaysRun = true)
 	public void modifyCustomerSBI() {
 		System.out.println("Customer Modified");
 	}
 
 
-	@Test (priority = 2,dependsOnMethods = "createCustomerSBI")
+	@Test (dependsOnMethods = "createCustomerSBI")
 	public void deleteCustomerSBI() {
 		System.out.println("Customer Deleted");
 	}

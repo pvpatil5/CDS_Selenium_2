@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testng.Demo_3_DependsON">
+      <class name="com.testng.TestAnnotation">
         <methods>
-          <include name="deleteCustomerSBI"/>
-          <include name="modifyCustomerSBI"/>
-          <include name="createCustomerSBI"/>
+          <include name="test2"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.testng.Demo_3_DependsON -->
+      </class> <!-- com.testng.TestAnnotation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
