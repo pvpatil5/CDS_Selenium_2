@@ -2,53 +2,25 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-12T09:05:56 IST" name="Suite" finished-at="2023-12-12T09:05:56 IST" duration-ms="61">
+  <suite started-at="2023-12-15T08:40:31 IST" name="Suite" finished-at="2023-12-15T08:40:31 IST" duration-ms="42">
     <groups>
+      <group name="regression">
+        <method signature="CreateOrgTest.createOrg_WithEmail()[pri:0, instance:com.SampleFW.CreateOrgTest@26e356f0]" name="createOrg_WithEmail" class="com.SampleFW.CreateOrgTest"/>
+      </group> <!-- regression -->
+      <group name="sanity">
+        <method signature="CreateOrgTest.createOrg_WithCouponCode()[pri:0, instance:com.SampleFW.CreateOrgTest@26e356f0]" name="createOrg_WithCouponCode" class="com.SampleFW.CreateOrgTest"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2023-12-12T09:05:56 IST" name="Test" finished-at="2023-12-12T09:05:56 IST" duration-ms="61">
-      <class name="com.SampleFW.CreateContactTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.SampleFW.CreateContactTest@368247b9]" started-at="2023-12-12T09:05:56 IST" name="beforeClass" finished-at="2023-12-12T09:05:56 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="createContactWithOrgTest()[pri:0, instance:com.SampleFW.CreateContactTest@368247b9]" started-at="2023-12-12T09:05:56 IST" name="createContactWithOrgTest" finished-at="2023-12-12T09:05:56 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createContactWithOrgTest -->
-        <test-method is-config="true" signature="LoginToApp()[pri:0, instance:com.SampleFW.CreateContactTest@368247b9]" started-at="2023-12-12T09:05:56 IST" name="LoginToApp" finished-at="2023-12-12T09:05:56 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginToApp -->
-        <test-method is-config="true" signature="LogOutandCloseBrowser()[pri:0, instance:com.SampleFW.CreateContactTest@368247b9]" started-at="2023-12-12T09:05:56 IST" name="LogOutandCloseBrowser" finished-at="2023-12-12T09:05:56 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogOutandCloseBrowser -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.SampleFW.CreateContactTest@368247b9]" started-at="2023-12-12T09:05:56 IST" name="afterClass" finished-at="2023-12-12T09:05:56 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.SampleFW.CreateContactTest -->
+    <test started-at="2023-12-15T08:40:31 IST" name="Test" finished-at="2023-12-15T08:40:31 IST" duration-ms="42">
       <class name="com.SampleFW.CreateOrgTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.SampleFW.CreateOrgTest@45099dd3]" started-at="2023-12-12T09:05:56 IST" name="beforeClass" finished-at="2023-12-12T09:05:56 IST" duration-ms="10" status="PASS">
+        <test-method signature="createOrg_WithCouponCode()[pri:0, instance:com.SampleFW.CreateOrgTest@26e356f0]" started-at="2023-12-15T08:40:31 IST" name="createOrg_WithCouponCode" finished-at="2023-12-15T08:40:31 IST" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="LoginToApp()[pri:0, instance:com.SampleFW.CreateOrgTest@45099dd3]" started-at="2023-12-12T09:05:56 IST" name="LoginToApp" finished-at="2023-12-12T09:05:56 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginToApp -->
-        <test-method signature="createOrg_WithEmail()[pri:0, instance:com.SampleFW.CreateOrgTest@45099dd3]" started-at="2023-12-12T09:05:56 IST" name="createOrg_WithEmail" finished-at="2023-12-12T09:05:56 IST" duration-ms="6" status="PASS">
+        </test-method> <!-- createOrg_WithCouponCode -->
+        <test-method signature="createOrg_WithEmail()[pri:0, instance:com.SampleFW.CreateOrgTest@26e356f0]" started-at="2023-12-15T08:40:31 IST" name="createOrg_WithEmail" finished-at="2023-12-15T08:40:31 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createOrg_WithEmail -->
-        <test-method is-config="true" signature="LogOutandCloseBrowser()[pri:0, instance:com.SampleFW.CreateOrgTest@45099dd3]" started-at="2023-12-12T09:05:56 IST" name="LogOutandCloseBrowser" finished-at="2023-12-12T09:05:56 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogOutandCloseBrowser -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.SampleFW.CreateOrgTest@45099dd3]" started-at="2023-12-12T09:05:56 IST" name="afterClass" finished-at="2023-12-12T09:05:56 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
       </class> <!-- com.SampleFW.CreateOrgTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

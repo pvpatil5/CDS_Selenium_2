@@ -10,7 +10,7 @@ public interface OrganizationPageElements
 	By orgtypeDD=By.id("bas_searchfield");
 	By searchOrgBtn= By.name("submit");
 	By searchedOrgText=By.xpath("(//a[@title='Organizations'])[1]");
-	
+	By OrgText=By.xpath("//a[@href='index.php?action=ListView&module=Accounts&parenttab=Marketing']");
 	
 	
 	

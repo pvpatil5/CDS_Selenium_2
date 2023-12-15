@@ -47,23 +47,23 @@ public class TestAnnotation
 	public void afterClass() {
 		System.out.println("After Class");
 	}
-//	@BeforeTest
-//	public void beforeTest() {
-//		System.out.println("Before Test");
-//	}
-//	@AfterTest
-//	public void afterTest() {
-//		System.out.println("After Test");
-//	}
-//
-//	@BeforeSuite
-//	public void beforeSuite() {
-//		System.out.println("Before Suite");
-//	}
-//	@AfterSuite
-//	public void afterSuite() {
-//		System.out.println("After Suite");
-//	}
+	@BeforeTest
+	public void beforeTest() {
+		System.out.println("Before Test");
+	}
+	@AfterTest
+	public void afterTest() {
+		System.out.println("After Test");
+	}
+
+	@BeforeSuite
+	public void beforeSuite() {
+		System.out.println("Before Suite");
+	}
+	@AfterSuite
+	public void afterSuite() {
+		System.out.println("After Suite");
+	}
 
 
 

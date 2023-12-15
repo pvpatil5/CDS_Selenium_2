@@ -9,30 +9,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import basics.selenium.MouseHover;
 import genericMethods.CreateRandomNumber;
 import genericMethods.PropertyFileHandling;
 import genericMethods.SeleniumGenericMedhods;
+import pom.HomePageElements;
+import pom.OrganizationPageElements;
 
-public class CreateOrganizationTest extends SeleniumGenericMedhods {
+public class CreateOrganizationTest extends SeleniumGenericMedhods implements HomePageElements,OrganizationPageElements{
 
-	public static void main(String[] args) throws InterruptedException, IOException {
-		//Login App
-		//Validate Home Page
-		//Click on Org menu
-		// click on create org
-		// enter org info
-		// save
-		//validate 
-		//logout
-
-
-		String browser=PropertyFileHandling.readDataPropFile("browser");
-		String url=PropertyFileHandling.readDataPropFile("url");;
-		WebDriver driver = SeleniumGenericMedhods.launchBrowser(browser,url);
-		//Login code
-		
+	@Test
+	public void createOrgTest() throws InterruptedException {
 
 		//Login Validate
 		String pagetitle=driver.findElement(By.xpath("//a[@href='index.php?action=index&module=Home']")).getText();
@@ -45,10 +34,12 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 		}
 
 		//click on org
-		driver.findElement(By.xpath("//a[@href='index.php?module=Accounts&action=index']")).click();
+		clickEleemnt(organizationModule);
+		
 
 		//validate org landing page
-		boolean flag = driver.findElement(By.xpath("//a[@href='index.php?action=ListView&module=Accounts&parenttab=Marketing']")).isDisplayed();
+		
+		 boolean flag =elementIsDisplayed(OrgText);
 		if(flag) {
 			System.out.println("Org page disp");
 		}
@@ -58,19 +49,16 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 
 		// click on create org
 
-		driver.findElement(By.xpath("//img[@alt='Create Organization...']")).click();
+		clickEleemnt(createOrgBtn);
 
 		//enter org name
 		String number=CreateRandomNumber.randomnumber();
 		String orgname="TATA TECH_";
 		String orgName=orgname+number;
-		
-		
-		//driver.findElement(By.name("accountname")).sendKeys(orgName);
-		
+
 		enterData(By.name("accountname"), orgName);
 
-	//	driver.findElement(By.xpath("//input[@accesskey='S']")).click();
+		//	driver.findElement(By.xpath("//input[@accesskey='S']")).click();
 		clickEleemnt(By.xpath("//input[@accesskey='S']"));
 
 		Thread.sleep(3000);
@@ -107,9 +95,9 @@ public class CreateOrganizationTest extends SeleniumGenericMedhods {
 		mouseHover(ele);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[@href='index.php?module=Users&action=Logout']")).click();
-		
-		
-		
+
+
+
 	}
 
 }
